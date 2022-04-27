@@ -10,16 +10,8 @@ export default function Navbar() {
       {navlist.map((each, index) => {
         console.log(each);
         return (
-          <NavLink
-            key={index}
-            to={each.href}
-            className={({ isActive }) => (isActive ? "activeNav" : "")}
-          >
-            <NavItem
-              item={({ isActive }) =>
-                isActive ? console.log(each.icon[1]) : console.log(each.icon[2])
-              }
-            ></NavItem>
+          <NavLink key={index} to={each.href}>
+            <NavItem item={each.icon[0]}></NavItem>
           </NavLink>
         );
       })}

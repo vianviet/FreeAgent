@@ -16,7 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
         <Route element={<PrivateRoute />}>
-          <Route path="/calender" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Route>
       </Routes>
     </div>
