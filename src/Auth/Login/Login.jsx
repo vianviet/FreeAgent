@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import au from "../Data/authen";
+import au from "../../Data/authen";
 
 const userData = JSON.parse(JSON.stringify(au));
 export default function Login() {
@@ -15,7 +15,6 @@ export default function Login() {
         userData[i].password === password
       ) {
         localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
         localStorage.setItem("au", true);
         message = "正常にログインしました";
         navigate("/");
@@ -28,7 +27,7 @@ export default function Login() {
   };
   const navigate = useNavigate();
   return (
-    <div id="login-form">
+    <div id="login-page">
       <div className="login d-flex flex-column justify-content-between">
         <div></div>
         <div className="text-uppercase header mt-3">freeagent</div>
