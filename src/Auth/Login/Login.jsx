@@ -1,15 +1,32 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import au from "../Data/authen";
+
+const userData = JSON.parse(JSON.stringify(au));
 export default function Login() {
-  const [text, setText] = useState("");
-  console.log(text);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(localStorage.getItem("au"));
-    localStorage.setItem("au", true);
-    console.log(localStorage.getItem("au"));
-    window.location.href = "/home";
+    var message;
+    for (var i = 0; i < userData.length; i++) {
+      if (
+        userData[i].username === username &&
+        userData[i].password === password
+      ) {
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        localStorage.setItem("au", true);
+        message = "正常にログインしました";
+        navigate("/");
+        break;
+      } else {
+        message = "インに失敗しました";
+      }
+    }
+    alert(message);
   };
-
+  const navigate = useNavigate();
   return (
     <div id="login-form">
       <div className="login d-flex flex-column justify-content-between">
@@ -21,12 +38,13 @@ export default function Login() {
               className="input mt-3 mb-3 p-10"
               type="text"
               placeholder="ユーザID"
-              onChange={(e) => setText(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
               className="input mt-3 mb-3"
               type="password"
               placeholder="パスワード"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button
               className="login-btn mt-3 mb-3"

@@ -4,9 +4,9 @@ const useAuth = () => {
   const user = { loggedIn: localStorage.getItem("au") };
   return user && user.loggedIn;
 };
-const PrivateRoute = () => {
+const PublicRoute = () => {
   const isAuth = useAuth();
-  return isAuth ? <Outlet /> : <Navigate to="/login" />;
+  return isAuth ? <Navigate to="/" /> : <Outlet />;
 };
 
-export default PrivateRoute;
+export default PublicRoute;

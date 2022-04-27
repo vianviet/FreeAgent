@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Auth/Login/Login";
 import PrivateRoute from "./Auth/RouterCustom/PrivateRoute";
-import Home from "./components/Home";
+import PublicRoute from "./Auth/RouterCustom/PublicRoute";
+import Home from "./Page/Home";
 
 function App() {
   const authen = localStorage.getItem("au");
@@ -10,8 +11,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="login" element={<Login></Login>} />
-        <Route path="/home" element={<PrivateRoute component={<Home />} />} />
+        {/* <Route exact path="/login" element={<Login />} /> */}
+        <Route element={<PublicRoute />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
+        <Route element={<PrivateRoute />}>
+          <Route path="/" element={<Home />} />
+        </Route>
       </Routes>
     </div>
   );
