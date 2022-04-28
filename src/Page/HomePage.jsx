@@ -1,12 +1,14 @@
 import React from "react";
+import { Outlet } from "react-router";
 import Header from "./Header/Header";
-import Main from "./Main/Main";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div id="home-page" className="d-flex flex-row">
       <Header></Header>
-      <Main></Main>
+      <div id="main">
+        <Outlet />
+      </div>
     </div>
   );
 }

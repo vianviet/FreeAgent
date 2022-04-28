@@ -1,13 +1,15 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Auth/Login/Login";
 import PrivateRoute from "./Auth/RouterCustom/PrivateRoute";
 import PublicRoute from "./Auth/RouterCustom/PublicRoute";
-import Home from "./Page/Home";
+import HomePage from "./Page/HomePage";
+import AccountPage from "./Page/Main/AccountPage";
+import CalendarPage from "./Page/Main/CalendarPage";
+import SettingPage from "./Page/Main/SettingPage";
+import UserPage from "./Page/Main/UserPage";
 
 function App() {
-  const authen = localStorage.getItem("au");
-  console.log(authen);
   return (
     <div className="App">
       <Routes>
@@ -16,7 +18,13 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
         <Route element={<PrivateRoute />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />}>
+            <Route path="*" element={<Navigate to="calendar" />}></Route>
+            <Route path="calendar" element={<CalendarPage></CalendarPage>} />
+            <Route path="user" element={<UserPage></UserPage>}></Route>
+            <Route path="account" element={<AccountPage></AccountPage>}></Route>
+            <Route path="setting" element={<SettingPage></SettingPage>}></Route>
+          </Route>
         </Route>
       </Routes>
     </div>

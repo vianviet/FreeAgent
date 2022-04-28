@@ -17,7 +17,7 @@ export default function Login() {
         localStorage.setItem("username", username);
         localStorage.setItem("au", true);
         message = "正常にログインしました";
-        navigate("/");
+        navigate("/calendar");
         break;
       } else {
         message = "インに失敗しました";
@@ -36,13 +36,13 @@ export default function Login() {
             <input
               className="input mt-3 mb-3 p-10"
               type="text"
-              placeholder="ユーザID"
+              placeholder="ユーザID --> admin"
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
               className="input mt-3 mb-3"
               type="password"
-              placeholder="パスワード"
+              placeholder="パスワード --> admin"
               onChange={(e) => setPassword(e.target.value)}
             />
             <button

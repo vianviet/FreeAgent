@@ -1,24 +1,24 @@
-import { calendar, actcalendar } from "../component/Header/svg/index";
+import { calendar, actcalendar, user, actuser, account, actaccount, setting, actsetting } from "../component/Header/svg/index";
 
 const navbarItem = [{
-        "name": "calender",
-        "href": "/calender",
+        "name": "calendar",
+        "href": "/calendar",
         "icon": [calendar, actcalendar]
     },
     {
         "name": "user",
         "href": "/user",
-        "icon": ""
+        "icon": [user, actuser]
     },
     {
-        "name": "acount",
-        "href": "/acount",
-        "icon": ""
+        "name": "account",
+        "href": "/account",
+        "icon": [account, actaccount]
     },
     {
         "name": "setting",
         "href": "/setting",
-        "icon": ""
+        "icon": [setting, actsetting]
     }
 ]
 export default navbarItem

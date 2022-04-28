@@ -114,8 +114,36 @@ body,
     background-color: rgba(19, 55, 116, 1);
 }
 
+.navbar a {
+    border-radius: 50%;
+    display: flex;
+    width: 36px;
+    height: 36px;
+    margin: 18px auto;
+}
+
+.navbar a img {
+    align-items: center;
+    margin: auto;
+}
+
 .activeNav {
-    color: red;
+    background-color: rgba(41, 121, 255, 1);
+}
+
+.inactiveNav {
+    background-color: rgba(235, 242, 255, 1);
+}
+
+.logout {
+    margin: 5px auto;
+    width: 64px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(180, 180, 187, 1);
+}
+
+.logout :hover {
+    opacity: 0.5;
 }
 
 
