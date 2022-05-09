@@ -8,25 +8,39 @@ import AccountPage from "./Page/Main/AccountPage";
 import CalendarPage from "./Page/Main/CalendarPage";
 import SettingPage from "./Page/Main/SettingPage";
 import UserPage from "./Page/Main/UserPage";
+import "antd/dist/antd.css";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        {/* <Route exact path="/login" element={<Login />} /> */}
+        {" "}
+        {/* <Route exact path="/login" element={<Login />} /> */}{" "}
         <Route element={<PublicRoute />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
+          <Route path="/login" element={<Login />} />{" "}
+        </Route>{" "}
         <Route element={<PrivateRoute />}>
           <Route path="/" element={<HomePage />}>
-            <Route path="*" element={<Navigate to="calendar" />}></Route>
-            <Route path="calendar" element={<CalendarPage></CalendarPage>} />
-            <Route path="user" element={<UserPage></UserPage>}></Route>
-            <Route path="account" element={<AccountPage></AccountPage>}></Route>
-            <Route path="setting" element={<SettingPage></SettingPage>}></Route>
-          </Route>
-        </Route>
-      </Routes>
+            <Route path="*" element={<Navigate to="calendar" />}>
+              {" "}
+            </Route>{" "}
+            <Route path="" element={<Navigate to="calendar" />}>
+              {" "}
+            </Route>{" "}
+            <Route path="calendar" element={<CalendarPage> </CalendarPage>} />
+            <Route path="user" element={<UserPage> </UserPage>}></Route>
+            <Route
+              path="account"
+              element={<AccountPage> </AccountPage>}
+            ></Route>
+            <Route
+              Route
+              path="setting"
+              element={<SettingPage> </SettingPage>}
+            ></Route>
+          </Route>{" "}
+        </Route>{" "}
+      </Routes>{" "}
     </div>
   );
 }

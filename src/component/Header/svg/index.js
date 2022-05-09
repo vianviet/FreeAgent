@@ -1,4 +1,5 @@
 import calendar from './calendar.svg';
+import calendar2 from './calendar2.svg';
 import actcalendar from './actcalendar.svg'
 import user from './user.svg'
 import actuser from './actuser.svg'
@@ -15,5 +16,6 @@ export {
     account,
     actaccount,
     setting,
-    actsetting
+    actsetting,
+    calendar2
 }

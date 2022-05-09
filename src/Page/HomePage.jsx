@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div id="home-page" className="d-flex flex-row">
       <Header></Header>
-      <div id="main">
+      <div id="main" className="ml-5 mt-4">
         <Outlet />
       </div>
     </div>
