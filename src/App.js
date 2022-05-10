@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        {/* <Route exact path="/login" element={<Login />} /> */}
         <Route element={<PublicRoute />}>
           <Route path="/login" element={<Login />} />
         </Route>
